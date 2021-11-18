@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
-import { debug as log, getInput, setFailed } from '@actions/core';
+import { debug as log, getInput, setFailed, setOutput } from '@actions/core';
 import { context, getOctokit } from '@actions/github';
 
 // Helper function to retrieve ticket number from a string (either a shorthand reference or a full URL)
@@ -92,6 +92,9 @@ async function run(): Promise<void> {
         body: `See the ticket for this pull request: ${linkToTicket}`,
         event: 'COMMENT'
       });
+
+      setOutput('TICKET_NUMBER', ticketNumber);
+      setOutput('TICKET_LINK', linkToTicket);
     };
 
     debug('title', title);
