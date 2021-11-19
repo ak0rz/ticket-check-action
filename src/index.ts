@@ -178,7 +178,7 @@ async function run(): Promise<void> {
     }
 
     // Retrieve the pull request body and verify it's not empty
-    const body = context?.payload?.pull_request?.body;
+    const body = context?.payload?.pull_request?.body || getInput('pr_body');
 
     if (body === undefined) {
       debug('failure', 'Body is undefined');
