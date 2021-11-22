@@ -68,6 +68,9 @@ async function run(): Promise<void> {
 
       const linkToTicket = ticketLink.replace('%ticketNumber%', ticketNumber);
 
+      setOutput('TICKET_NUMBER', ticketNumber);
+      setOutput('TICKET_LINK', linkToTicket);
+
       const currentReviews = await client.pulls.listReviews({
         owner,
         repo,
@@ -92,9 +95,6 @@ async function run(): Promise<void> {
         body: `See the ticket for this pull request: ${linkToTicket}`,
         event: 'COMMENT'
       });
-
-      setOutput('TICKET_NUMBER', ticketNumber);
-      setOutput('TICKET_LINK', linkToTicket);
     };
 
     debug('title', title);
