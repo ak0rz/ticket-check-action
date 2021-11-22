@@ -68,9 +68,10 @@ async function run(): Promise<void> {
 
       const linkToTicket = ticketLink.replace('%ticketNumber%', ticketNumber);
 
-      debug('linking', ticketNumber);
+      debug('please just work', 'idk');
+      debug('ticket number', ticketNumber);
       setOutput('TICKET_NUMBER', ticketNumber);
-      debug('linking', linkToTicket);
+      debug('link to ticket', linkToTicket);
       setOutput('TICKET_LINK', linkToTicket);
 
       const currentReviews = await client.pulls.listReviews({
