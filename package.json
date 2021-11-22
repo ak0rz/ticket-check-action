@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/neofinancial/ticket-check-action"
+    "url": "https://github.com/UseFedora/ticket-check-action"
   },
   "main": "lib/main.js",
   "private": true,
